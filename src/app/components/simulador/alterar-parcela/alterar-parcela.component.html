@@ -1,0 +1,19 @@
+<section class="container card container-absolute-center aberto" [ngClass]="{fechado: !abrirCard}">
+  <h2 class="sub-titulo">Alterar Parcela</h2>
+  <hr />
+  <div class="sub-container">
+    <label for="parcela" class="label-parcela">Parcela</label>
+    <input type="number" id="parcela" class="input-margin" [(ngModel)]="alterarParcela.parcela" />
+
+    <label for="valor">Valor</label>
+    <input type="number" id="valor" class="input-margin" [(ngModel)]="alterarParcela.valor"/>
+
+    <label for="data-vencimento">Data de Vencimento</label>
+    <input type="date" id="data-vencimento" class="input-margin" [(ngModel)]="alterarParcela.dataVencimento"/>
+
+    <div class="botoes">
+      <button class="botao" (click)="salvar()">Salvar</button>
+      <button class="botao" (click)="fechar()">Voltar</button>
+    </div>
+  </div>
+</section>

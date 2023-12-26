@@ -1,0 +1,13 @@
+label {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.card {
+  width: 20%;
+}
+
+.botoes {
+  display: flex;
+  justify-content: space-around;
+}

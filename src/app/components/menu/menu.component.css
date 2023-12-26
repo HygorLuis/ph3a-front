@@ -1,0 +1,36 @@
+.cabecalho {
+  display: flex;
+  background-color: var(--branco);
+}
+
+.separador {
+  box-shadow: 0px 2px 5px var(--cinza-claro);
+}
+
+.cabecalho-img {
+  padding: 1em;
+  width: 170px;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  background: var(--laranja);
+  width: 100%;
+}
+
+.menu__item {
+  padding: 1.7em 1em;
+}
+
+.menu__item:hover {
+  background: var(--cinza);
+}
+
+.menu__item__link {
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--branco);
+}

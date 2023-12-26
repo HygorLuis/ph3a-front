@@ -1,0 +1,81 @@
+.section-lock {
+  pointer-events: none;
+  user-select: none;
+}
+
+.titulo {
+  font-size: 50px;
+  font-size: 600;
+}
+
+.informativo {
+  padding: 100% 0;
+}
+
+.informativo__texto {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+table {
+  margin: 1em;
+  border: 1px solid var(--cinza);
+  text-align: center;
+}
+
+td,
+th {
+  padding: 1em;
+  border: 1px solid var(--cinza);
+}
+
+th {
+  background: var(--laranja);
+  color: var(--branco);
+  font-size: 20px;
+  font-weight: 700;
+}
+
+tr:hover, tr.selecionado {
+  background: var(--cinza-claro);
+}
+
+.botao-img {
+  margin: 0 2px;
+  cursor: pointer;
+  color: var(--laranja);
+}
+
+.img-botao {
+  width: 15px;
+}
+
+@media screen and (max-width: 1500px) {
+
+  table {
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+   .container {
+    padding-right: 1em;
+    padding-left: 1em;
+  }
+
+  .content {
+    margin-right: 20rem;
+    transition: var(--tempo-efeito)
+  }
+
+  .content-closed {
+    margin-right: 0rem;
+  }
+
+  .calcular-juros {
+    right: 1em;
+  }
+}
+
+@media screen and (max-width: 1180px) {
+
+}

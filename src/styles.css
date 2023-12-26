@@ -1,1 +1,141 @@
-/* You can add global styles to this file, and also import other style files */
+@import url(reset.css);
+
+:root {
+  --laranja: rgb(235, 91, 34);
+  --cinza: rgb(155, 155, 155);
+  --cinza-claro: lightgrey;
+  --branco: white;
+  --tempo-efeito: 0.5s
+}
+
+body {
+  overflow-x: hidden;
+}
+
+hr {
+  width: 100%;
+}
+
+input {
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  outline: none;
+}
+
+.input-margin {
+  margin-top: 5px;
+  margin-bottom: 16px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 2em;
+  align-items: center;
+}
+
+.sub-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.blur {
+  filter: blur(3px);
+  pointer-events: none;
+  user-select: none;
+}
+
+.blur-transition {
+  transition: filter var(--tempo-efeito) ease;
+}
+
+.container-absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.container-absolute-center.aberto {
+  opacity: 1;
+  visibility: visible;
+  transition:
+    opacity var(--tempo-efeito),
+    visibility var(--tempo-efeito);
+}
+
+.container-absolute-center.fechado {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.container-absolute-right {
+  position: absolute;
+  top: 12em;
+  right: 2em;
+}
+
+.container-absolute-right.transition {
+  transition: transform var(--tempo-efeito) ease;
+}
+
+.container-absolute-right.fechado {
+  transform: translateX(22em);
+}
+
+.botao {
+  padding: 10px 16px;
+  cursor: pointer;
+  border: 0px;
+  background-color: var(--laranja);
+  border-radius: 16px;
+  color: var(--branco);
+}
+
+.botao:hover {
+  background-color: var(--cinza);
+}
+
+.container-radio {
+  padding-bottom: 1em;
+}
+
+.container-radio-opcao {
+  padding-top: 0.5em;
+}
+
+.radio-cursor {
+  cursor: pointer;
+}
+
+.radio-opcao {
+  margin-right: 0.5em;
+}
+
+.sub-titulo {
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.card {
+  border: 1px solid var(--cinza);
+  border-radius: 8px;
+  box-shadow: 0px 0px 5px var(--cinza);
+  background: var(--branco);
+}
+
+.botao-grande {
+  font-size: 16px;
+  font-weight: 500;
+  width: 250px;
+}
+
+.img-botao-card {
+  width: 20px;
+  cursor: pointer;
+  position: absolute;
+  top: 1em;
+  left: 1em;
+}

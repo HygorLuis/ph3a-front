@@ -1,0 +1,55 @@
+<section class="container blur-transition" [ngClass]="{'blur': cardIncluirParcelaAberto || cardAlterarParcelaAberto}" [ngClass]="{'section-lock': cardCalcularJurosAberto}">
+  <h1 class="titulo">Simulador de Cálculo de Juros</h1>
+  <hr />
+  <div class="container content" [ngClass]="{ 'content-closed': !cardCalcularJurosAberto }">
+    <button class="botao botao-grande" (click)="abrirCardIncluirParcela(true)">Incluir Parcela</button>
+
+    @if (parcelas.length > 0) {
+      <table>
+        <thead>
+          <tr>
+            <th>Parcela</th>
+            <th>Valor</th>
+            <th>Data de Vencimento</th>
+            <th>Data de Inclusão</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (parcela of parcelas; track parcela.id) {
+            <tr [ngClass]="{'selecionado': parcelaSelecionada.id === parcela.id}">
+              <td>{{parcela.parcela}}</td>
+              <td>R$ {{parcela.valor}}</td>
+              <td>{{parcela.dataVencimento | date:'dd/MM/yyyy'}}</td>
+              <td>{{parcela.dataInclusao | date:'dd/MM/yyyy'}}</td>
+              <td class="botoes">
+                <button title="Calcular Juros" class="botao-img" (click)="abrirCardCalcularJuros(true)">
+                  <img class="img-botao" src="../../../assets/calculadora.png" />
+                </button>
+
+                <button title="Editar Parcela" class="botao-img" (click)="alterarParcela(parcela.id)">
+                  <img class="img-botao" src="../../../assets/edicao.png" />
+                </button>
+
+                <button title="Excluir Parcela" class="botao-img" (click)="excluirParcela(parcela.id)">
+                  <img class="img-botao" src="../../../assets/lixeira.png" />
+                </button>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    }
+    @else {
+      <div class="informativo">
+        <p class="informativo__texto">Nenhuma parcela existente!</p>
+      </div>
+    }
+  </div>
+</section>
+
+<app-incluir-parcela [abrirCard]="cardIncluirParcelaAberto" (cardAberto)="abrirCardIncluirParcela($event)"></app-incluir-parcela>
+
+<app-alterar-parcela [abrirCard]="cardAlterarParcelaAberto" (cardAberto)="abrirCardAlterarParcela($event)" [alterarParcela]="parcelaSelecionada"></app-alterar-parcela>
+
+<app-calcular-juros [abrirCard]="cardCalcularJurosAberto" (cardAberto)="abrirCardCalcularJuros($event)"></app-calcular-juros>
