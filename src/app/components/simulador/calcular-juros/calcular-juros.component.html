@@ -1,31 +1,31 @@
-<section class="container card container-absolute-right transition" [ngClass]="{fechado: !abrirCard}">
+<section class="container card container-right" [ngClass]="{fechado: !abrirCard}">
   <a title="Fechar" (click)="fechar()">
     <img class="img-botao-card" src="../../../../assets/seta-direita.png" alt="Seta para o lado direito">
   </a>
-  <h2 class="sub-titulo">Cálcular Juros</h2>
+  <h2 class="sub-titulo">Calcular Juros</h2>
   <hr>
   <div class="sub-container">
     <fieldset class="container-radio">
       <legend>Tipo de Calculo</legend>
       <div class="container-radio-opcao">
-        <input type="radio" id="tipo-calculo-linear" name="tipo-calculo" value="Linear" class="radio-cursor radio-opcao">
+        <input type="radio" id="tipo-calculo-linear" name="tipo-calculo" [value]="tipoCalculo.Linear" class="radio-cursor radio-opcao" [(ngModel)]="simulacao.tipoCalculo">
         <label for="tipo-calculo-linear" class="radio-cursor">Linear</label>
       </div>
       <div class="container-radio-opcao">
-        <input type="radio" id="tipo-calculo-capitalizado" name="tipo-calculo" value="Capitalizado" class="radio-cursor radio-opcao">
+        <input type="radio" id="tipo-calculo-capitalizado" name="tipo-calculo" [value]="tipoCalculo.Capitalizado" class="radio-cursor radio-opcao" [(ngModel)]="simulacao.tipoCalculo">
         <label for="tipo-calculo-capitalizado" class="radio-cursor">Capitalizado</label>
       </div>
     </fieldset>
 
     <label for="juros">Juros</label>
-    <input type="number" id="juros" class="input-margin">
+    <input type="number" id="juros" class="input-margin" [(ngModel)]="simulacao.juros">
 
     <label for="total-juros">Total de Juros</label>
-    <input type="number" id="total-juros" class="input-margin">
+    <input type="number" id="total-juros" class="input-margin" [(ngModel)]="simulacao.totalJuros">
 
     <label for="total-divida">Total da Dívida</label>
-    <input type="number" id="total-divida" class="input-margin">
+    <input type="number" id="total-divida" class="input-margin" [(ngModel)]="simulacao.totalDivida">
 
-    <button class="botao botao-grande">Simular Cálculo</button>
+    <button class="botao botao-grande" (click)="calcularJuros()">Simular Cálculo</button>
   </div>
 </section>

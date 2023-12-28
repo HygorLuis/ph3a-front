@@ -2,43 +2,44 @@
   <h1 class="titulo">Simulador de Cálculo de Juros</h1>
   <hr />
   <div class="container content" [ngClass]="{ 'content-closed': !cardCalcularJurosAberto }">
-    <button class="botao botao-grande" (click)="abrirCardIncluirParcela(true)">Incluir Parcela</button>
+    <div class="botoes">
+      <button class="botao botao-grande" (click)="abrirCardIncluirParcela(true)">Incluir Parcela</button>
+      <button class="botao botao-grande" (click)="abrirCardCalcularJuros(true)">Calcular Juros</button>
+    </div>
 
     @if (parcelas.length > 0) {
-      <table>
-        <thead>
-          <tr>
-            <th>Parcela</th>
-            <th>Valor</th>
-            <th>Data de Vencimento</th>
-            <th>Data de Inclusão</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          @for (parcela of parcelas; track parcela.id) {
-            <tr [ngClass]="{'selecionado': parcelaSelecionada.id === parcela.id}">
-              <td>{{parcela.parcela}}</td>
-              <td>R$ {{parcela.valor}}</td>
-              <td>{{parcela.dataVencimento | date:'dd/MM/yyyy'}}</td>
-              <td>{{parcela.dataInclusao | date:'dd/MM/yyyy'}}</td>
-              <td class="botoes">
-                <button title="Calcular Juros" class="botao-img" (click)="abrirCardCalcularJuros(true)">
-                  <img class="img-botao" src="../../../assets/calculadora.png" />
-                </button>
-
-                <button title="Editar Parcela" class="botao-img" (click)="alterarParcela(parcela.id)">
-                  <img class="img-botao" src="../../../assets/edicao.png" />
-                </button>
-
-                <button title="Excluir Parcela" class="botao-img" (click)="excluirParcela(parcela.id)">
-                  <img class="img-botao" src="../../../assets/lixeira.png" />
-                </button>
-              </td>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Parcela</th>
+              <th>Valor</th>
+              <th>Data de Vencimento</th>
+              <th>Data de Inclusão</th>
+              <th></th>
             </tr>
-          }
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            @for (parcela of parcelas; track parcela.id) {
+              <tr [ngClass]="{'selecionado': parcelaSelecionada.id === parcela.id}">
+                <td>{{parcela.parcela}}</td>
+                <td>R$ {{parcela.valor}}</td>
+                <td>{{parcela.dataVencimento | date:'dd/MM/yyyy'}}</td>
+                <td>{{parcela.dataInclusao | date:'dd/MM/yyyy'}}</td>
+                <td>
+                  <button title="Editar Parcela" class="botao-img" (click)="alterarParcela(parcela.id)">
+                    <img class="img-botao" src="../../../assets/edicao.png" />
+                  </button>
+
+                  <button title="Excluir Parcela" class="botao-img" (click)="excluirParcela(parcela.id)">
+                    <img class="img-botao" src="../../../assets/lixeira.png" />
+                  </button>
+                </td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
     }
     @else {
       <div class="informativo">

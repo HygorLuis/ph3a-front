@@ -5,11 +5,7 @@
   --cinza: rgb(155, 155, 155);
   --cinza-claro: lightgrey;
   --branco: white;
-  --tempo-efeito: 0.5s
-}
-
-body {
-  overflow-x: hidden;
+  --tempo-efeito: 0.5s;
 }
 
 hr {
@@ -35,6 +31,12 @@ input {
   align-items: center;
 }
 
+.botoes {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
 .sub-container {
   display: flex;
   flex-direction: column;
@@ -50,14 +52,49 @@ input {
   transition: filter var(--tempo-efeito) ease;
 }
 
+.table-wrapper {
+  overflow-y: auto;
+  height: 50vh;
+  margin: 1em;
+  border: 1px solid var(--cinza);
+}
+
+table {
+  text-align: center;
+  min-width: max-content;
+}
+
+thead {
+  position: sticky;
+  top: 0px;
+  background: var(--laranja);
+  color: var(--branco);
+  font-size: 20px;
+  font-weight: 700;
+}
+
+th {
+  padding: 1em;
+}
+
+td {
+  padding: 0.2em;
+}
+
+tr {
+  border-bottom: 1px solid var(--cinza);
+}
+
+tbody tr:hover,
+tbody tr.selecionado {
+  background: var(--cinza-claro);
+}
+
 .container-absolute-center {
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
-}
-
-.container-absolute-center.aberto {
   opacity: 1;
   visibility: visible;
   transition:
@@ -70,17 +107,14 @@ input {
   visibility: hidden;
 }
 
-.container-absolute-right {
-  position: absolute;
-  top: 12em;
+.container-right {
+  position: fixed;
+  top: 16.3em;
   right: 2em;
-}
-
-.container-absolute-right.transition {
   transition: transform var(--tempo-efeito) ease;
 }
 
-.container-absolute-right.fechado {
+.container-right.fechado {
   transform: translateX(22em);
 }
 
@@ -138,4 +172,40 @@ input {
   position: absolute;
   top: 1em;
   left: 1em;
+}
+
+@media screen and (max-width: 1500px) {
+  table {
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  .container {
+    padding-right: 1em;
+    padding-left: 1em;
+  }
+
+  .container-right {
+    right: 1em;
+  }
+}
+
+@media screen and (max-width: 1320px) {
+
+  .content {
+    margin-right: 19em;
+    transition: var(--tempo-efeito);
+  }
+
+  .content-closed {
+    margin-right: 0em;
+  }
+
+  .container-right {
+    right: 1em;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+
 }

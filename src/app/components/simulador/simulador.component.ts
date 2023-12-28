@@ -43,7 +43,6 @@ export class SimuladorComponent implements OnInit{
     if (!abrir)
       this.parcelaSelecionada = new Parcela();
 
-    console.log('abrir calculo juros:' + abrir);
     this.cardCalcularJurosAberto = abrir;
   }
 

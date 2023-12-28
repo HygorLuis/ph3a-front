@@ -6,8 +6,3 @@ label {
 .card {
   width: 20%;
 }
-
-.botoes {
-  display: flex;
-  justify-content: space-around;
-}
