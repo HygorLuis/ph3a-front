@@ -10,6 +10,7 @@ import { SimuladorComponent } from './components/simulador/simulador.component';
 import { AlterarParcelaComponent } from './components/simulador/alterar-parcela/alterar-parcela.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { UltimasSimulacoesComponent } from './components/ultimas-simulacoes/ultimas-simulacoes.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { HttpClientModule } from '@angular/common/http';
     CalcularJurosComponent,
     IncluirParcelaComponent,
     SimuladorComponent,
-    AlterarParcelaComponent
+    AlterarParcelaComponent,
+    UltimasSimulacoesComponent
   ],
   imports: [
     BrowserModule,

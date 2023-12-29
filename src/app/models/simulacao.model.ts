@@ -11,7 +11,7 @@ export class Simulacao {
   }
 
   id: number;
-  tipoCalculo: TipoCalculo;
+  tipoCalculo: TipoCalculo | string;
   juros: number;
   totalJuros: number;
   totalDivida: number;

@@ -3,7 +3,6 @@
 :root {
   --laranja: rgb(235, 91, 34);
   --cinza: rgb(155, 155, 155);
-  --cinza-claro: lightgrey;
   --branco: white;
   --tempo-efeito: 0.5s;
 }
@@ -83,11 +82,14 @@ td {
 
 tr {
   border-bottom: 1px solid var(--cinza);
+  transition: background-color var(--tempo-efeito) ease-out;
 }
 
+tbody tr.selecionado,
 tbody tr:hover,
-tbody tr.selecionado {
-  background: var(--cinza-claro);
+.menu__item:hover,
+.botao:hover {
+  background-color: var(--cinza);
 }
 
 .container-absolute-center {
@@ -125,10 +127,7 @@ tbody tr.selecionado {
   background-color: var(--laranja);
   border-radius: 16px;
   color: var(--branco);
-}
-
-.botao:hover {
-  background-color: var(--cinza);
+  transition: background-color var(--tempo-efeito) ease-out;
 }
 
 .container-radio {
@@ -147,10 +146,24 @@ tbody tr.selecionado {
   margin-right: 0.5em;
 }
 
+.titulo {
+  font-size: 50px;
+  font-size: 600;
+}
+
 .sub-titulo {
   font-size: 1.5rem;
   font-weight: 600;
   text-align: center;
+}
+
+.informativo {
+  padding: 100% 0;
+}
+
+.informativo__texto {
+  font-size: 1.5rem;
+  font-weight: 500;
 }
 
 .card {

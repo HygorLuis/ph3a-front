@@ -4,7 +4,9 @@
   <div class="container content" [ngClass]="{ 'content-closed': !cardCalcularJurosAberto }">
     <div class="botoes">
       <button class="botao botao-grande" (click)="abrirCardIncluirParcela(true)">Incluir Parcela</button>
-      <button class="botao botao-grande" (click)="abrirCardCalcularJuros(true)">Calcular Juros</button>
+      @if (parcelas.length > 0) {
+        <button class="botao botao-grande" (click)="abrirCardCalcularJuros(true)">Calcular Juros</button>
+      }
     </div>
 
     @if (parcelas.length > 0) {

@@ -3,20 +3,6 @@
   user-select: none;
 }
 
-.titulo {
-  font-size: 50px;
-  font-size: 600;
-}
-
-.informativo {
-  padding: 100% 0;
-}
-
-.informativo__texto {
-  font-size: 1.5rem;
-  font-weight: 500;
-}
-
 .botao-img {
   margin: 0 2px;
   cursor: pointer;

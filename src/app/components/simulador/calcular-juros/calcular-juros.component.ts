@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Simulacao } from '../../../models/simulacao.model';
 import { ParcelaService } from '../../../services/parcela.service';
 import { TipoCalculo } from '../../../enums/tipo-calculo';
+import { SimulacaoService } from '../../../services/simulacao.service';
 
 @Component({
   selector: 'app-calcular-juros',
@@ -15,12 +16,12 @@ export class CalcularJurosComponent {
   tipoCalculo = TipoCalculo;
   simulacao = new Simulacao();
 
-  constructor(private service: ParcelaService) {}
+  constructor(private parcelaService: ParcelaService, private simulacaoService: SimulacaoService) {}
 
   calcularJuros() {
     this.simulacao.totalJuros = 0;
 
-    this.service.listar().subscribe(parcelas => {
+    this.parcelaService.listar().subscribe(parcelas => {
       parcelas.forEach(p => {
         let differenceInTime = new Date().getTime() - new Date(`${p.dataVencimento}T00:00:00`).getTime();
         let differenceInDays = Math.round(differenceInTime / (1000 * 3600 * 24));
@@ -38,6 +39,9 @@ export class CalcularJurosComponent {
       });
 
       this.simulacao.totalDivida = parcelas.map(p => p.valor as number).reduce((a, b) => a + b) + this.simulacao.totalJuros;
+      this.simulacao.dataInclusao = new Date();
+
+      this.simulacaoService.criar(this.simulacao).subscribe();
     });
   }
 

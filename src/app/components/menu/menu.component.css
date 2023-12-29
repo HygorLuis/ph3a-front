@@ -21,10 +21,7 @@
 
 .menu__item {
   padding: 1.7em 1em;
-}
-
-.menu__item:hover {
-  background: var(--cinza);
+  transition: background-color var(--tempo-efeito) ease-out;
 }
 
 .menu__item__link {

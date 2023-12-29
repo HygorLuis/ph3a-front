@@ -1,0 +1,35 @@
+<section class="container">
+  <h1 class="titulo">Ultimas Simulações</h1>
+  <hr />
+  @if (simulacoes.length > 0) {
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Juros</th>
+            <th>Tipo de Calculo</th>
+            <th>Total de Juros</th>
+            <th>Total da Dívida</th>
+            <th>Data de Inclusão</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (simulacao of simulacoes; track simulacao.id) {
+            <tr>
+              <td>{{simulacao.juros}}%</td>
+              <td>{{simulacao.tipoCalculo}}</td>
+              <td>R$ {{simulacao.totalJuros}}</td>
+              <td>R$ {{simulacao.totalDivida}}</td>
+              <td>{{simulacao.dataInclusao | date:'dd/MM/yyyy'}}</td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  }
+  @else {
+    <div>
+      <p class="informativo__texto">Nenhuma simulação realizada!</p>
+    </div>
+  }
+</section>
