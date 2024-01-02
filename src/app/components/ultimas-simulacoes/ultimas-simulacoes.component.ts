@@ -24,8 +24,8 @@ export class UltimasSimulacoesComponent implements OnInit {
   formatarValores(casasDecimais: number): void {
     this.simulacoes.forEach(s => {
       s.tipoCalculo = TipoCalculoLabel.get(s.tipoCalculo as TipoCalculo) as string;
-      s.totalJuros = parseFloat(s.totalJuros.toFixed(casasDecimais));
-      s.totalDivida = parseFloat(s.totalDivida.toFixed(casasDecimais));
+      s.totalJuros = parseFloat((s.totalJuros as number).toFixed(casasDecimais));
+      s.totalDivida = parseFloat((s.totalDivida as number).toFixed(casasDecimais));
     });
   }
 

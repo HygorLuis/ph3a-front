@@ -3,146 +3,17 @@
     {
       "id": 1,
       "parcela": 1,
-      "valor": 20,
-      "dataVencimento": "2023-12-26",
-      "dataInclusao": "2023-12-26T19:15:12.617Z"
+      "valor": 25,
+      "dataVencimento": "2024-01-06",
+      "dataInclusao": "2023-12-30T18:13:15.206Z"
     },
     {
       "id": 2,
       "parcela": 2,
-      "valor": 20,
-      "dataVencimento": "2023-12-26",
-      "dataInclusao": "2023-12-26T19:15:12.617Z"
-    },
-    {
-      "id": 3,
-      "parcela": 3,
-      "valor": 20,
-      "dataVencimento": "2023-12-26",
-      "dataInclusao": "2023-12-26T19:15:12.617Z"
-    },
-    {
-      "id": 4,
-      "parcela": 4,
-      "valor": 20,
-      "dataVencimento": "2023-12-26",
-      "dataInclusao": "2023-12-26T19:15:12.617Z"
-    },
-    {
-      "id": 5,
-      "parcela": 5,
-      "valor": 25,
-      "dataVencimento": "2023-12-26",
-      "dataInclusao": "2023-12-26T19:15:12.617Z"
-    },
-    {
-      "id": 6,
-      "parcela": 6,
-      "valor": 20,
-      "dataVencimento": "2023-12-26",
-      "dataInclusao": "2023-12-26T19:15:12.617Z"
-    },
-    {
-      "id": 7,
-      "parcela": 7,
-      "valor": 20,
-      "dataVencimento": "2023-12-26",
-      "dataInclusao": "2023-12-26T19:15:12.617Z"
-    },
-    {
-      "id": 8,
-      "parcela": 8,
-      "valor": 20,
-      "dataVencimento": "2023-12-26",
-      "dataInclusao": "2023-12-26T19:15:12.617Z"
-    },
-    {
-      "id": 9,
-      "parcela": 9,
-      "valor": 20,
-      "dataVencimento": "2023-12-26",
-      "dataInclusao": "2023-12-26T19:15:12.617Z"
-    },
-    {
-      "id": 10,
-      "parcela": 10,
-      "valor": 20,
-      "dataVencimento": "2023-12-26",
-      "dataInclusao": "2023-12-26T19:15:12.617Z"
-    },
-    {
-      "id": 11,
-      "parcela": 12,
-      "valor": 20,
-      "dataVencimento": "2023-12-26",
-      "dataInclusao": "2023-12-26T19:15:12.617Z"
-    },
-    {
-      "id": 13,
-      "parcela": 13,
-      "valor": 20,
-      "dataVencimento": "2023-12-26",
-      "dataInclusao": "2023-12-26T19:15:12.617Z"
-    },
-    {
-      "id": 14,
-      "parcela": 14,
-      "valor": 20,
-      "dataVencimento": "2023-12-26",
-      "dataInclusao": "2023-12-26T19:15:12.617Z"
-    },
-    {
-      "id": 15,
-      "parcela": 15,
-      "valor": 20,
-      "dataVencimento": "2023-12-26",
-      "dataInclusao": "2023-12-26T19:15:12.617Z"
-    },
-    {
-      "id": 16,
-      "parcela": 16,
-      "valor": 20,
-      "dataVencimento": "2023-12-26",
-      "dataInclusao": "2023-12-26T19:15:12.617Z"
-    },
-    {
-      "id": 17,
-      "parcela": 17,
-      "valor": 20,
-      "dataVencimento": "2023-12-26",
-      "dataInclusao": "2023-12-26T19:15:12.617Z"
-    },
-    {
-      "id": 18,
-      "parcela": 18,
-      "valor": 35,
-      "dataVencimento": "2023-12-28",
-      "dataInclusao": "2023-12-28T11:19:40.807Z"
-    },
-    {
-      "id": 19,
-      "parcela": 19,
-      "valor": 35,
-      "dataVencimento": "2023-12-28",
-      "dataInclusao": "2023-12-28T11:19:55.288Z"
+      "valor": 50,
+      "dataVencimento": "2024-01-03",
+      "dataInclusao": "2024-01-02T19:38:08.752Z"
     }
   ],
-  "simulacao": [
-    {
-      "id": 1,
-      "tipoCalculo": 1,
-      "juros": 25,
-      "totalJuros": 870.8333333333333,
-      "totalDivida": 1265.8333333333333,
-      "dataInclusao": "2023-12-29T09:33:00.288Z"
-    },
-    {
-      "id": 2,
-      "tipoCalculo": 1,
-      "juros": 35,
-      "totalJuros": 1219.1666666666665,
-      "totalDivida": 1614.1666666666665,
-      "dataInclusao": "2023-12-29T12:34:25.997Z"
-    }
-  ]
+  "simulacao": []
 }

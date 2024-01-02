@@ -1,9 +1,9 @@
-<section class="container blur-transition" [ngClass]="{'blur': cardIncluirParcelaAberto || cardAlterarParcelaAberto}" [ngClass]="{'section-lock': cardCalcularJurosAberto}">
+<section class="container blur-transition" [ngClass]="{'blur': cardParcelaAberto}" [ngClass]="{'section-lock': cardCalcularJurosAberto}">
   <h1 class="titulo">Simulador de Cálculo de Juros</h1>
   <hr />
   <div class="container content" [ngClass]="{ 'content-closed': !cardCalcularJurosAberto }">
     <div class="botoes">
-      <button class="botao botao-grande" (click)="abrirCardIncluirParcela(true)">Incluir Parcela</button>
+      <button class="botao botao-grande" (click)="abrirCardParcela(true)">Incluir Parcela</button>
       @if (parcelas.length > 0) {
         <button class="botao botao-grande" (click)="abrirCardCalcularJuros(true)">Calcular Juros</button>
       }
@@ -29,7 +29,7 @@
                 <td>{{parcela.dataVencimento | date:'dd/MM/yyyy'}}</td>
                 <td>{{parcela.dataInclusao | date:'dd/MM/yyyy'}}</td>
                 <td>
-                  <button title="Editar Parcela" class="botao-img" (click)="alterarParcela(parcela.id)">
+                  <button title="Editar Parcela" class="botao-img" (click)="abrirCardParcela(true, parcela.id)">
                     <img class="img-botao" src="../../../assets/edicao.png" />
                   </button>
 
@@ -51,8 +51,8 @@
   </div>
 </section>
 
-<app-incluir-parcela [abrirCard]="cardIncluirParcelaAberto" (cardAberto)="abrirCardIncluirParcela($event)"></app-incluir-parcela>
-
-<app-alterar-parcela [abrirCard]="cardAlterarParcelaAberto" (cardAberto)="abrirCardAlterarParcela($event)" [alterarParcela]="parcelaSelecionada"></app-alterar-parcela>
+@if (cardParcelaAberto) {
+  <app-cadastro-parcela [abrirCard]="cardParcelaAberto" (cardAberto)="abrirCardParcela($event)" [parcelaSelecionada]="parcelaSelecionada"></app-cadastro-parcela>
+}
 
 <app-calcular-juros [abrirCard]="cardCalcularJurosAberto" (cardAberto)="abrirCardCalcularJuros($event)"></app-calcular-juros>

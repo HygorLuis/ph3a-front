@@ -4,16 +4,16 @@ export class Simulacao {
   constructor() {
     this.id = 0;
     this.tipoCalculo = TipoCalculo.Linear;
-    this.juros = 0;
-    this.totalJuros = 0;
-    this.totalDivida = 0;
+    this.juros = '';
+    this.totalJuros = '';
+    this.totalDivida = '';
     this.dataInclusao = '';
   }
 
   id: number;
   tipoCalculo: TipoCalculo | string;
-  juros: number;
-  totalJuros: number;
-  totalDivida: number;
+  juros: number | string;
+  totalJuros: number | string;
+  totalDivida: number | string;
   dataInclusao: Date | string;
 }

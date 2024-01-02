@@ -3,7 +3,9 @@
 :root {
   --laranja: rgb(235, 91, 34);
   --cinza: rgb(155, 155, 155);
+  --cinza-claro: lightgrey;
   --branco: white;
+  --vermelho: red;
   --tempo-efeito: 0.5s;
 }
 
@@ -18,9 +20,34 @@ input {
   outline: none;
 }
 
-.input-margin {
-  margin-top: 5px;
-  margin-bottom: 16px;
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+span.error {
+	font-size: 0.8em;
+  margin-top: .3em;
+	color: var(--vermelho);
+}
+
+.container-absolute-center {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  /* opacity: 1;
+  visibility: visible;
+  transition:
+    opacity var(--tempo-efeito),
+    visibility var(--tempo-efeito); */
+}
+
+.card {
+  border: 1px solid var(--cinza);
+  border-radius: 8px;
+  box-shadow: 0px 0px 5px var(--cinza);
+  background: var(--branco);
 }
 
 .container {
@@ -30,15 +57,33 @@ input {
   align-items: center;
 }
 
-.botoes {
-  display: flex;
-  width: 100%;
-  justify-content: space-evenly;
+/* .container-absolute-center.fechado {
+  opacity: 0;
+  visibility: hidden;
+} */
+
+.container-right {
+  position: fixed;
+  top: 16.3em;
+  right: 2em;
+  transition: transform var(--tempo-efeito) ease;
+}
+
+.container-right.fechado {
+  transform: translateX(22em);
 }
 
 .sub-container {
   display: flex;
   flex-direction: column;
+  padding-top: 1em;
+  gap: 25px;
+}
+
+.botoes {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
 }
 
 .blur {
@@ -92,34 +137,6 @@ tbody tr:hover,
   background-color: var(--cinza);
 }
 
-.container-absolute-center {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-50%);
-  opacity: 1;
-  visibility: visible;
-  transition:
-    opacity var(--tempo-efeito),
-    visibility var(--tempo-efeito);
-}
-
-.container-absolute-center.fechado {
-  opacity: 0;
-  visibility: hidden;
-}
-
-.container-right {
-  position: fixed;
-  top: 16.3em;
-  right: 2em;
-  transition: transform var(--tempo-efeito) ease;
-}
-
-.container-right.fechado {
-  transform: translateX(22em);
-}
-
 .botao {
   padding: 10px 16px;
   cursor: pointer;
@@ -164,13 +181,6 @@ tbody tr:hover,
 .informativo__texto {
   font-size: 1.5rem;
   font-weight: 500;
-}
-
-.card {
-  border: 1px solid var(--cinza);
-  border-radius: 8px;
-  box-shadow: 0px 0px 5px var(--cinza);
-  background: var(--branco);
 }
 
 .botao-grande {

@@ -5,30 +5,34 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { CalcularJurosComponent } from './components/simulador/calcular-juros/calcular-juros.component';
-import { IncluirParcelaComponent } from './components/simulador/incluir-parcela/incluir-parcela.component';
+import { CadastroParcelaComponent } from './components/simulador/cadastro-parcela/cadastro-parcela.component';
 import { SimuladorComponent } from './components/simulador/simulador.component';
-import { AlterarParcelaComponent } from './components/simulador/alterar-parcela/alterar-parcela.component';
-import { FormsModule } from '@angular/forms';
+
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { UltimasSimulacoesComponent } from './components/ultimas-simulacoes/ultimas-simulacoes.component';
+import { NgxMaskDirective, provideNgxMask } from 'ngx-mask';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
     CalcularJurosComponent,
-    IncluirParcelaComponent,
+    CadastroParcelaComponent,
     SimuladorComponent,
-    AlterarParcelaComponent,
     UltimasSimulacoesComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxMaskDirective,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    provideNgxMask()
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

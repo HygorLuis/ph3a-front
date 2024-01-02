@@ -1,15 +1,13 @@
 export class Parcela {
   constructor() {
     this.id = 0;
-    this.parcela = '';
-    this.valor = '';
-    this.dataVencimento = '';
-    this.dataInclusao = '';
+    this.parcela = 0;
+    this.valor = 0;
   }
 
   id: number;
-  parcela: number | string;
-  valor: number | string;
-  dataVencimento: Date | string;
-  dataInclusao: Date | string;
+  parcela: number;
+  valor: number;
+  dataVencimento?: Date;
+  dataInclusao?: Date;
 }

@@ -8,8 +8,7 @@ import { Parcela } from '../../models/parcela.model';
   styleUrl: './simulador.component.css',
 })
 export class SimuladorComponent implements OnInit{
-  cardIncluirParcelaAberto: boolean = false;
-  cardAlterarParcelaAberto: boolean = false;
+  cardParcelaAberto: boolean = false;
   cardCalcularJurosAberto: boolean = false;
   parcelaSelecionada = new Parcela();
   parcelas: Parcela[] = [];
@@ -26,16 +25,10 @@ export class SimuladorComponent implements OnInit{
     });
   }
 
-  abrirCardIncluirParcela(abrir: boolean) {
-    this.cardIncluirParcelaAberto = abrir;
-    this.listarParcelas();
-  }
+  abrirCardParcela(abrir: boolean, idParcela: number = 0) {
+    this.parcelaSelecionada = idParcela > 0 ? this.parcelas.find((x) => x.id === idParcela) as Parcela : new Parcela();
 
-  abrirCardAlterarParcela(abrir: boolean): void {
-    if (!abrir)
-      this.parcelaSelecionada = new Parcela();
-
-    this.cardAlterarParcelaAberto = abrir;
+    this.cardParcelaAberto = abrir;
     this.listarParcelas();
   }
 
@@ -44,13 +37,6 @@ export class SimuladorComponent implements OnInit{
       this.parcelaSelecionada = new Parcela();
 
     this.cardCalcularJurosAberto = abrir;
-  }
-
-  alterarParcela(idParcela: number) {
-    this.parcelaSelecionada = this.parcelas.find((x) => x.id === idParcela) as Parcela;
-
-    console.log('abrir parcela:' + true);
-    this.abrirCardAlterarParcela(true);
   }
 
   excluirParcela(idParcela: number) {
