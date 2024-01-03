@@ -16,10 +16,10 @@
         <tbody>
           @for (simulacao of simulacoes; track simulacao.id) {
             <tr>
-              <td>{{simulacao.juros}}%</td>
+              <td>{{simulacao.juros}} %</td>
               <td>{{simulacao.tipoCalculo}}</td>
-              <td>R$ {{simulacao.totalJuros}}</td>
-              <td>R$ {{simulacao.totalDivida}}</td>
+              <td>{{simulacao.totalJuros | currency:'R$':'symbol':'1.2-2':'pt-BR'}}</td>
+              <td>{{simulacao.totalDivida | currency:'R$':'symbol':'1.2-2':'pt-BR'}}</td>
               <td>{{simulacao.dataInclusao | date:'dd/MM/yyyy'}}</td>
             </tr>
           }

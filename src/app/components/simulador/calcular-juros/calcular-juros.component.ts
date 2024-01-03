@@ -1,43 +1,67 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Simulacao } from '../../../models/simulacao.model';
 import { ParcelaService } from '../../../services/parcela.service';
 import { TipoCalculo } from '../../../enums/tipo-calculo';
 import { SimulacaoService } from '../../../services/simulacao.service';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-calcular-juros',
   templateUrl: './calcular-juros.component.html',
   styleUrl: './calcular-juros.component.css',
 })
-export class CalcularJurosComponent {
+export class CalcularJurosComponent implements OnInit {
   @Input() abrirCard: boolean = false;
   @Output() cardAberto = new EventEmitter<boolean>();
   tipoCalculo = TipoCalculo;
   simulacao = new Simulacao();
+  jurosControl = new FormControl('', [
+    Validators.required,
+    Validators.min(0.01),
+  ]);
 
   constructor(
     private parcelaService: ParcelaService,
     private simulacaoService: SimulacaoService
   ) {}
 
-  calcularJuros() {
+  ngOnInit(): void {
+    this.jurosControl.valueChanges.subscribe((value) => {
+      this.simulacao.juros = parseFloat(value as string);
+    });
+  }
+
+  calcularJuros(): void {
+    if (this.jurosControl.invalid) return;
+
     this.simulacao.totalJuros = 0;
     this.simulacao.totalDivida = 0;
     let somaJuros: number = 0;
 
     this.parcelaService.listar().subscribe((parcelas) => {
       parcelas.forEach((p) => {
-        let differenceInTime = new Date().getTime() - new Date(`${p.dataVencimento}T00:00:00`).getTime();
-        let differenceInDays = Math.round(differenceInTime / (1000 * 3600 * 24));
+        let differenceInTime =
+          new Date().getTime() -
+          new Date(`${p.dataVencimento}T00:00:00`).getTime();
+        let differenceInDays = Math.round(
+          differenceInTime / (1000 * 3600 * 24)
+        );
         let atraso = differenceInDays > 0 ? differenceInDays : 0;
 
         switch (this.simulacao.tipoCalculo) {
           case TipoCalculo.Linear:
-            somaJuros += (p.valor as number) * (this.simulacao.juros as number) * (atraso / 30);
+            somaJuros +=
+              (p.valor as number) *
+              (this.simulacao.juros as number) *
+              (atraso / 30);
+
             break;
 
           case TipoCalculo.Capitalizado:
-            somaJuros += (p.valor as number) * Math.pow((1 + (this.simulacao.juros as number)), (atraso / 30) - 1);
+            somaJuros +=
+              (p.valor as number) *
+              Math.pow(1 + (this.simulacao.juros as number), atraso / 30 - 1);
+
             break;
         }
 
@@ -51,8 +75,14 @@ export class CalcularJurosComponent {
     });
   }
 
-  fechar() {
+  fechar(): void {
+    this.reset();
     this.abrirCard = false;
     this.cardAberto.emit(this.abrirCard);
+  }
+
+  reset() : void {
+    this.simulacao = new Simulacao();
+    this.jurosControl.reset();
   }
 }

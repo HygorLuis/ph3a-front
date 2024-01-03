@@ -1,12 +1,8 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Parcela } from '../../../models/parcela.model';
 import { ParcelaService } from '../../../services/parcela.service';
-import {
-  FormBuilder,
-  FormControl,
-  FormGroup,
-  Validators,
-} from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ParcelaForm } from './parcela-form';
 
 @Component({
   selector: 'app-cadastro-parcela',
@@ -19,32 +15,30 @@ export class CadastroParcelaComponent implements OnInit {
   @Output() cardAberto = new EventEmitter<boolean>();
   parcela = new Parcela();
   submitted: boolean = false;
-  form: FormGroup;
+  parcelaForm = new FormGroup<ParcelaForm>({
+    parcela: new FormControl('', [
+      Validators.required,
+      Validators.min(1),
+      Validators.max(999),
+    ]),
+    valor: new FormControl('', [Validators.required, Validators.min(0.01)]),
+    dataVencimento: new FormControl('', [Validators.required]),
+  });
 
-  constructor(private service: ParcelaService, private fb: FormBuilder) {
-    this.form = this.fb.group({
-      parcela: new FormControl('', [
-        Validators.required,
-        Validators.min(1),
-        Validators.max(999),
-      ]),
-      valor: new FormControl('', [Validators.required, Validators.min(0.01)]),
-      dataVencimento: new FormControl('', [Validators.required]),
-    });
-  }
+  constructor(private service: ParcelaService) {}
 
   ngOnInit(): void {
-    this.form.valueChanges.subscribe((values) => {
-      this.parcela.parcela = values.parcela;
-      this.parcela.valor = values.valor;
-      this.parcela.dataVencimento = values.dataVencimento;
+    this.parcelaForm.valueChanges.subscribe((values) => {
+      this.parcela.parcela = values.parcela as number;
+      this.parcela.valor = values.valor as number;
+      this.parcela.dataVencimento = values.dataVencimento as Date;
     });
 
     if (this.parcelaSelecionada?.id > 0) {
-      this.form.patchValue({
-        parcela: this.parcelaSelecionada.parcela,
-        valor: this.parcelaSelecionada.valor,
-        dataVencimento: this.parcelaSelecionada.dataVencimento,
+      this.parcelaForm.patchValue({
+        parcela: this.parcelaSelecionada.parcela as number,
+        valor: this.parcelaSelecionada.valor as number,
+        dataVencimento: this.parcelaSelecionada.dataVencimento as Date,
       });
 
       this.parcela = this.parcelaSelecionada;
@@ -54,7 +48,7 @@ export class CadastroParcelaComponent implements OnInit {
   onSubmit() {
     this.submitted = true;
 
-    if (this.form.invalid) return;
+    if (this.parcelaForm.invalid) return;
 
     if (this.parcelaSelecionada.id > 0) {
       this.service.atualizar(this.parcela).subscribe(() => {
@@ -69,13 +63,7 @@ export class CadastroParcelaComponent implements OnInit {
   }
 
   fechar(): void {
-    this.reset();
     this.abrirCard = false;
     this.cardAberto.emit(this.abrirCard);
-  }
-
-  reset(): void {
-    this.submitted = false;
-    this.parcela = new Parcela();
   }
 }

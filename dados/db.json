@@ -3,17 +3,26 @@
     {
       "id": 1,
       "parcela": 1,
-      "valor": 25,
-      "dataVencimento": "2024-01-06",
+      "valor": 3500.35,
+      "dataVencimento": "2023-12-05",
       "dataInclusao": "2023-12-30T18:13:15.206Z"
     },
     {
       "id": 2,
       "parcela": 2,
       "valor": 50,
-      "dataVencimento": "2024-01-03",
+      "dataVencimento": "2023-10-04",
       "dataInclusao": "2024-01-02T19:38:08.752Z"
     }
   ],
-  "simulacao": []
+  "simulacao": [
+    {
+      "id": 1,
+      "tipoCalculo": 1,
+      "juros": 90,
+      "totalJuros": 318156,
+      "totalDivida": 321710,
+      "dataInclusao": "2024-01-03T14:16:00.559Z"
+    }
+  ]
 }

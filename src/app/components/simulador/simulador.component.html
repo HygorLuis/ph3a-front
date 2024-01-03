@@ -25,7 +25,7 @@
             @for (parcela of parcelas; track parcela.id) {
               <tr [ngClass]="{'selecionado': parcelaSelecionada.id === parcela.id}">
                 <td>{{parcela.parcela}}</td>
-                <td>R$ {{parcela.valor}}</td>
+                <td>{{parcela.valor | currency:'R$':'symbol':'1.2-2':'pt-BR'}}</td>
                 <td>{{parcela.dataVencimento | date:'dd/MM/yyyy'}}</td>
                 <td>{{parcela.dataInclusao | date:'dd/MM/yyyy'}}</td>
                 <td>

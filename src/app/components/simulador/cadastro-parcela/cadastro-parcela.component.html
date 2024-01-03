@@ -1,16 +1,16 @@
 <section class="container card container-absolute-center">
   <h2 class="sub-titulo">Incluir Parcela</h2>
   <hr />
-  <form [formGroup]="form" (ngSubmit)="onSubmit()" class="sub-container">
+  <form [formGroup]="parcelaForm" (ngSubmit)="onSubmit()" class="sub-container">
     <div class="form-group">
       <label for="parcela" class="label-parcela">Parcela</label>
-      <input id="parcela" name="parcela" type="number" required formControlName="parcela"/>
+      <input id="parcela" name="parcela" type="text" required mask="separator.0" formControlName="parcela"/>
 
-      @if (submitted || (form.get('parcela')?.hasError('required') && form.get('parcela')?.touched)) {
+      @if (submitted && parcelaForm.controls.parcela.invalid || (parcelaForm.get('parcela')?.hasError('required') && parcelaForm.get('parcela')?.touched)) {
         <span class="error">Número da parcela é obrigatório.</span>
       }
 
-      @if (submitted || ((form.get('parcela')?.hasError('min') || form.get('parcela')?.hasError('max')) && form.get('parcela')?.touched)) {
+      @if (submitted && parcelaForm.controls.parcela.invalid || ((parcelaForm.get('parcela')?.hasError('min') || parcelaForm.get('parcela')?.hasError('max')) && parcelaForm.get('parcela')?.touched)) {
         <span class="error">Preencha com valor entre 1 à 999.</span>
       }
     </div>
@@ -19,7 +19,7 @@
       <label for="valor">Valor</label>
       <input id="valor" name="valor" type="text" required prefix="R$ " mask="separator.2" thousandSeparator="." formControlName="valor"/>
 
-      @if (submitted || (form.get('valor')?.hasError('required') && form.get('valor')?.touched)) {
+      @if (submitted && parcelaForm.controls.valor.invalid || (parcelaForm.get('valor')?.hasError('required') && parcelaForm.get('valor')?.touched)) {
         <span class="error">Valor é obrigatório.</span>
       }
     </div>
@@ -28,7 +28,7 @@
       <label for="data-vencimento">Data de Vencimento</label>
       <input id="data-vencimento" name="data-vencimento" type="date" required formControlName="dataVencimento"/>
 
-      @if (submitted || (form.get('dataVencimento')?.hasError('required') && form.get('dataVencimento')?.touched)) {
+      @if (submitted && parcelaForm.controls.dataVencimento.invalid || (parcelaForm.get('dataVencimento')?.hasError('required') && parcelaForm.get('dataVencimento')?.touched)) {
         <span class="error">Data de vencimento é obrigatório.</span>
       }
     </div>
