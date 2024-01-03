@@ -12,3 +12,33 @@
 .img-botao {
   width: 15px;
 }
+
+@media screen and (max-width: 1024px) {
+  .botao-grande {
+    width: 200px;
+  }
+}
+
+@media screen and (max-width: 810px) {
+  .to-be-replaced-parc:after {
+    content: "Parc";
+  }
+
+  .to-be-replaced-parc:after {
+    content: "Parc";
+  }
+
+  .to-be-replaced-dt-venc:after {
+    content: "Dt. Venc.";
+  }
+
+  .to-be-replaced-dt-inc:after {
+    content: "Dt. Inc.";
+  }
+
+  .botoes {
+    flex-direction: column;
+    align-items: center;
+    gap: .8em;
+  }
+}

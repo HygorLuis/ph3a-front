@@ -31,3 +31,17 @@
   text-decoration: none;
   color: var(--branco);
 }
+
+@media screen and (max-width: 1024px) {
+  .cabecalho-img {
+    width: 75px;
+  }
+
+  .menu__item {
+    padding: 0 .5em;
+  }
+
+  .menu__item__link {
+    font-size: 1rem;
+  }
+}

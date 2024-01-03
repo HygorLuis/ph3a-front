@@ -1,0 +1,17 @@
+@media screen and (max-width: 1024px) {
+  .to-be-replaced-tipo-calc:after {
+    content: "Tip. Calc.";
+  }
+
+  .to-be-replaced-t-juros:after {
+    content: "T. Juros";
+  }
+
+  .to-be-replaced-t-div:after {
+    content: "T. Dívida";
+  }
+
+  .to-be-replaced-dt-inc:after {
+    content: "Dt. Inc.";
+  }
+}

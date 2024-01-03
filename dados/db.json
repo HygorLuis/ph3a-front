@@ -13,6 +13,13 @@
       "valor": 50,
       "dataVencimento": "2023-10-04",
       "dataInclusao": "2024-01-02T19:38:08.752Z"
+    },
+    {
+      "id": 3,
+      "parcela": 3,
+      "valor": 50,
+      "dataVencimento": "2024-01-01",
+      "dataInclusao": "2024-01-03T14:24:38.233Z"
     }
   ],
   "simulacao": [

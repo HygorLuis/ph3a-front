@@ -230,5 +230,49 @@ tbody tr:hover,
 }
 
 @media screen and (max-width: 1024px) {
+  .titulo {
+    font-size: 2rem;
+    text-align: center;
+    padding: .5em;
+  }
 
+  .container {
+    padding: .5em;
+  }
+
+  th {
+    padding: 0.1em;
+  }
+
+  thead {
+    font-size: 1rem;
+  }
+
+  .container-right {
+    top: 25%
+  }
+}
+
+@media screen and (max-width: 810px) {
+  thead th span {
+    display: none;
+  }
+
+  .content {
+    margin-right: 0;
+  }
+
+  .container-right {
+    right: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .container-right.fechado {
+    transform: translateX(32em);
+  }
+
+  .card {
+    width: 17em;
+  }
 }
