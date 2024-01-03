@@ -26,9 +26,9 @@ input {
 }
 
 span.error {
-	font-size: 0.8em;
+  font-size: 0.8em;
   margin-top: .3em;
-	color: var(--vermelho);
+  color: var(--vermelho);
 }
 
 .container-absolute-center {
@@ -36,11 +36,6 @@ span.error {
   top: 50%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
-  /* opacity: 1;
-  visibility: visible;
-  transition:
-    opacity var(--tempo-efeito),
-    visibility var(--tempo-efeito); */
 }
 
 .card {
@@ -56,11 +51,6 @@ span.error {
   padding: 2em;
   align-items: center;
 }
-
-/* .container-absolute-center.fechado {
-  opacity: 0;
-  visibility: hidden;
-} */
 
 .container-right {
   position: fixed;
@@ -134,14 +124,14 @@ tbody tr.selecionado,
 tbody tr:hover,
 .menu__item:hover,
 .botao:hover {
-  background-color: var(--cinza);
+  background: var(--cinza);
 }
 
 .botao {
   padding: 10px 16px;
   cursor: pointer;
   border: 0px;
-  background-color: var(--laranja);
+  background: var(--laranja);
   border-radius: 16px;
   color: var(--branco);
   transition: background-color var(--tempo-efeito) ease-out;
@@ -211,10 +201,14 @@ tbody tr:hover,
   .container-right {
     right: 1em;
   }
+
+  tbody tr.selecionado,
+  .menu__item:hover {
+    background: none;
+  }
 }
 
 @media screen and (max-width: 1320px) {
-
   .content {
     margin-right: 19em;
     transition: var(--tempo-efeito);
@@ -229,15 +223,15 @@ tbody tr:hover,
   }
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1000px) {
   .titulo {
     font-size: 2rem;
     text-align: center;
-    padding: .5em;
+    padding: 0.5em;
   }
 
   .container {
-    padding: .5em;
+    padding: 0.5em;
   }
 
   th {
@@ -246,10 +240,6 @@ tbody tr:hover,
 
   thead {
     font-size: 1rem;
-  }
-
-  .container-right {
-    top: 25%
   }
 }
 
