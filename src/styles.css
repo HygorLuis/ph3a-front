@@ -20,6 +20,11 @@ input {
   outline: none;
 }
 
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
 .form-group {
   display: flex;
   flex-direction: column;
