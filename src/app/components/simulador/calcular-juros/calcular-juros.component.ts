@@ -13,8 +13,11 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class CalcularJurosComponent implements OnInit {
   @Input() abrirCard: boolean = false;
   @Output() cardAberto = new EventEmitter<boolean>();
+
   tipoCalculo = TipoCalculo;
   simulacao = new Simulacao();
+  inputJurosIsFocus: boolean = false;
+
   jurosControl = new FormControl('', [
     Validators.required,
     Validators.min(0.01),

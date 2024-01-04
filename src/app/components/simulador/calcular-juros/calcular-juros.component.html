@@ -27,13 +27,12 @@
           class="radio-cursor radio-opcao"
           [(ngModel)]="simulacao.tipoCalculo"
         />
-        <label for="tipo-calculo-capitalizado" class="radio-cursor">Capitalizado</label
-        >
+        <label for="tipo-calculo-capitalizado" class="radio-cursor">Capitalizado</label>
       </div>
     </fieldset>
 
     <div class="form-group">
-      <label for="juros" class="placeholder" [ngClass]="{'title': !jurosControl.hasError('required')}">Juros</label>
+      <label for="juros" class="placeholder" [ngClass]="{'title': !jurosControl.hasError('required') || inputJurosIsFocus}">Juros</label>
       <input
         id="juros"
         name="juros"
@@ -43,11 +42,12 @@
         mask="separator.2"
         thousandSeparator="."
         [formControl]="jurosControl"
-      />
+        (focus)="inputJurosIsFocus = true" (blur)="inputJurosIsFocus = false"/>
 
-      @if (jurosControl.invalid && jurosControl.touched) {
-        <span class="error">Juros é obrigatório.</span>
-      }
+      <div id="validacao-erro" [ngClass]="{'visible': (jurosControl.invalid && jurosControl.touched)}">
+        <p><span class="error">Juros é obrigatório.</span></p>
+      </div>
+
     </div>
 
     <div class="form-group">

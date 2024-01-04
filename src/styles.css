@@ -30,6 +30,16 @@ button {
   flex-direction: column;
 }
 
+#validacao-erro {
+  visibility: hidden;
+  position: absolute;
+  transform: translateY(35px);
+}
+
+#validacao-erro.visible {
+  visibility: visible;
+}
+
 span.error {
   font-size: 0.8em;
   margin-top: .3em;
@@ -72,7 +82,7 @@ span.error {
   display: flex;
   flex-direction: column;
   padding-top: 1em;
-  gap: 25px;
+  gap: 20px;
 }
 
 .botoes {
