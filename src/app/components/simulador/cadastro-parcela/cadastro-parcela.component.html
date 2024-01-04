@@ -3,7 +3,7 @@
   <hr />
   <form [formGroup]="parcelaForm" (ngSubmit)="onSubmit()" class="sub-container">
     <div class="form-group">
-      <label for="parcela" class="placeholder" [ngClass]="{'title': parcelaForm.get('parcela')?.value != ''}">Parcela</label>
+      <label for="parcela" class="placeholder" [ngClass]="{'title': !parcelaForm.get('parcela')?.hasError('required')}">Parcela</label>
       <input id="parcela" name="parcela" type="text" required mask="separator.0" formControlName="parcela"/>
 
       @if (submitted && parcelaForm.controls.parcela.invalid || (parcelaForm.get('parcela')?.hasError('required') && parcelaForm.get('parcela')?.touched)) {
