@@ -30,6 +30,150 @@
       "totalJuros": 318156,
       "totalDivida": 321710,
       "dataInclusao": "2024-01-03T14:16:00.559Z"
+    },
+    {
+      "id": 2,
+      "tipoCalculo": 1,
+      "juros": 25,
+      "totalJuros": 91467.08333333333,
+      "totalDivida": 95067.43333333333,
+      "dataInclusao": "2024-01-04T12:46:53.339Z"
+    },
+    {
+      "id": 3,
+      "tipoCalculo": 1,
+      "juros": 35,
+      "totalJuros": 128053.91666666667,
+      "totalDivida": 131654.26666666666,
+      "dataInclusao": "2024-01-04T12:47:01.948Z"
+    },
+    {
+      "id": 4,
+      "tipoCalculo": 1,
+      "juros": 35,
+      "totalJuros": 128053.91666666667,
+      "totalDivida": 131654.26666666666,
+      "dataInclusao": "2024-01-04T12:47:04.212Z"
+    },
+    {
+      "id": 5,
+      "tipoCalculo": 1,
+      "juros": 35,
+      "totalJuros": 128053.91666666667,
+      "totalDivida": 131654.26666666666,
+      "dataInclusao": "2024-01-04T12:47:04.573Z"
+    },
+    {
+      "id": 6,
+      "tipoCalculo": 1,
+      "juros": 35,
+      "totalJuros": 128053.91666666667,
+      "totalDivida": 131654.26666666666,
+      "dataInclusao": "2024-01-04T12:47:04.780Z"
+    },
+    {
+      "id": 7,
+      "tipoCalculo": 1,
+      "juros": 35,
+      "totalJuros": 128053.91666666667,
+      "totalDivida": 131654.26666666666,
+      "dataInclusao": "2024-01-04T12:47:04.983Z"
+    },
+    {
+      "id": 8,
+      "tipoCalculo": 1,
+      "juros": 35,
+      "totalJuros": 128053.91666666667,
+      "totalDivida": 131654.26666666666,
+      "dataInclusao": "2024-01-04T12:47:05.204Z"
+    },
+    {
+      "id": 9,
+      "tipoCalculo": 1,
+      "juros": 25,
+      "totalJuros": 91467.08333333333,
+      "totalDivida": 95067.43333333333,
+      "dataInclusao": "2024-01-04T12:47:37.578Z"
+    },
+    {
+      "id": 10,
+      "tipoCalculo": 1,
+      "juros": 35,
+      "totalJuros": 128053.91666666667,
+      "totalDivida": 131654.26666666666,
+      "dataInclusao": "2024-01-04T12:47:43.021Z"
+    },
+    {
+      "id": 11,
+      "tipoCalculo": 1,
+      "juros": 35,
+      "totalJuros": 128053.91666666667,
+      "totalDivida": 131654.26666666666,
+      "dataInclusao": "2024-01-04T12:47:44.514Z"
+    },
+    {
+      "id": 12,
+      "tipoCalculo": 1,
+      "juros": 35,
+      "totalJuros": 128053.91666666667,
+      "totalDivida": 131654.26666666666,
+      "dataInclusao": "2024-01-04T12:47:44.901Z"
+    },
+    {
+      "id": 13,
+      "tipoCalculo": 1,
+      "juros": 35,
+      "totalJuros": 128053.91666666667,
+      "totalDivida": 131654.26666666666,
+      "dataInclusao": "2024-01-04T12:47:45.145Z"
+    },
+    {
+      "id": 14,
+      "tipoCalculo": 1,
+      "juros": 35,
+      "totalJuros": 128053.91666666667,
+      "totalDivida": 131654.26666666666,
+      "dataInclusao": "2024-01-04T12:47:45.333Z"
+    },
+    {
+      "id": 15,
+      "tipoCalculo": 1,
+      "juros": 35,
+      "totalJuros": 128053.91666666667,
+      "totalDivida": 131654.26666666666,
+      "dataInclusao": "2024-01-04T12:47:45.540Z"
+    },
+    {
+      "id": 16,
+      "tipoCalculo": 1,
+      "juros": 35,
+      "totalJuros": 128053.91666666667,
+      "totalDivida": 131654.26666666666,
+      "dataInclusao": "2024-01-04T12:47:45.728Z"
+    },
+    {
+      "id": 17,
+      "tipoCalculo": 1,
+      "juros": 35,
+      "totalJuros": 128053.91666666667,
+      "totalDivida": 131654.26666666666,
+      "dataInclusao": "2024-01-04T12:47:45.943Z"
+    },
+    {
+      "id": 18,
+      "tipoCalculo": 1,
+      "juros": 35,
+      "totalJuros": 128053.91666666667,
+      "totalDivida": 131654.26666666666,
+      "dataInclusao": "2024-01-04T12:47:46.145Z"
+    },
+    {
+      "id": 19,
+      "tipoCalculo": 1,
+      "juros": 35,
+      "totalJuros": 128053.91666666667,
+      "totalDivida": 131654.26666666666,
+      "dataInclusao": "2024-01-04T12:47:46.332Z"
     }
   ]
 }

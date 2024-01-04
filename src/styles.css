@@ -192,6 +192,25 @@ tbody tr:hover,
   left: 1em;
 }
 
+.placeholder {
+  position: relative;
+  top: 1em;
+  left: 0.15em;
+  cursor: text;
+  color: rgb(133, 133, 133);
+
+  transition:
+    top .3s ease,
+    left .3s ease;
+}
+
+.placeholder.title {
+  top: 0;
+  left: 0;
+  color: black;
+  cursor: default;
+}
+
 @media screen and (max-width: 1500px) {
   table {
     margin-right: 0;
